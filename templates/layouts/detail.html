@@ -1,0 +1,35 @@
+{%extends "layouts/main.html"%}
+{% load static%}
+
+{%block title%} welcome to homepage {% endblock title %}
+
+{% block content %}
+<br>
+<div class="container"><br><br><br>
+    <a href="{% url 'home'%}" class="btn btn-danger float-start">go back</a><br>
+<br>
+<h4>{{post.title }}<br></h4>
+
+{{post.content }}
+
+<br><br>
+<img class="img-thumbnail img-rounded ig" style="height:300px;width:300px;" src="{{post.image.url}} "/> 
+
+
+
+
+
+<p>post created at :{{post.date_created}}</p>
+
+<p>updated :{{post.date_modified}}</p>
+<br><br>
+
+<a href="" class="btn btn-success ">Edit</a>
+<a href="" class="btn btn-danger ">Delete</a>
+<br><br>
+
+</div>
+
+
+
+{% endblock content %}

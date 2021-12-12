@@ -1,0 +1,23 @@
+{%extends "layouts/main.html"%}
+{% load static%}
+
+{%block title%} welcome to homepage {% endblock title %}
+
+{% block content %}
+<br>
+<div class="container">
+  
+<h3>test</h3>
+<br><br>
+<form method="post"> 
+    {% csrf_token %} 
+    {{ form.as_p }} 
+    <input type="submit" value="Save"> 
+</form> 
+
+
+</div>
+
+
+
+{% endblock content %}

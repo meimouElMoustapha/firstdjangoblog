@@ -1,0 +1,60 @@
+{%extends "layouts/main.html"%}
+{% load static%}
+
+{%block title%} welcome list page {% endblock title %}
+
+{% block content %}
+<br>
+<div class="container">
+    <br><br><br>
+    <a class="btn btn-success" href="{% url 'create'  %}">Create post</a>
+
+<h2>welcome to list page </h2>
+<br>
+
+
+      
+{% for features in features%}
+<div>
+<!-- <li style="list-style-type:none; ">
+    <a style="text-decoration: none;" href="{% url 'detail' features.pk %}">{{features.title }}</a>
+</li>
+</ul> -->
+
+<div class="card" style="width: 18rem;">
+
+  
+    <img class="img-thumbnail img-rounded " style="height:300px;width:300px;" src="{{features.image.url}} "/> 
+
+    <div class="card-body">
+        
+      <h5 class="card-title">{{features.title }}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a style="text-decoration: none;" href="{% url 'detail' features.pk %}">view</a>
+    
+    
+    </div>
+
+
+    </div>
+
+
+
+
+<!-- If objet_list is empty  -->
+{% empty %}
+<li>No objects yet.</li>
+
+
+
+
+{% endfor %}
+
+
+
+    
+</div>
+
+
+
+{% endblock content %}

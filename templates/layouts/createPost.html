@@ -1,0 +1,26 @@
+{%extends "layouts/main.html"%}
+
+
+{%block title%} create post page {% endblock title %}
+
+{% block content %}
+<br>
+<div class="container">
+<br><br><br>
+
+    <h2>Create post </h2>
+
+
+    <form method="POST" enctype="multipart/form-data" action="">
+        {%csrf_token %}
+    
+        {{ form.as_p}}
+        <input type="submit" class="btn btn-success" />
+    <br><br>
+    </form>
+
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,42 @@
+{%extends "layouts/main.html"%}
+{% load crispy_forms_tags %}
+
+{%block title%} contact page {% endblock title %}
+
+{% block content %}
+<br>
+<div class="container">
+
+    <br><br><br>
+    <h2>welcome to contact me page </h2>
+    <a href="{% url 'home'%}" class="btn btn-danger float-end">go back</a><br><br>
+<form method="POST" class="form-control">
+    {%csrf_token %}
+
+    {{ form.as_p}}
+    <input class="btn btn-success" type="submit"/>
+<br><br>
+</form>
+
+
+<br>
+{% if messages %}
+<div class="alert alert-success" role="alert">
+  
+  
+
+<ul class="messages">
+    {% for message in messages %}
+    <li style="list-style-type: none;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</div>
+
+
+
+</div>
+
+
+
+{% endblock content %}
